@@ -1,0 +1,13 @@
+train: C:/Users/LENOVO/Desktop/accident/data/train/images 
+val: C:/Users/LENOVO/Desktop/accident/data/valid/images
+test: C:/Users/LENOVO/Desktop/accident/data/test/images
+
+nc: 1
+names: ['Accident']
+
+roboflow:
+  workspace: project
+  project: accident-detection-model
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/project/accident-detection-model/dataset/1

@@ -1,0 +1,35 @@
+model = ultralytics.YOLO('yolov8l')
+results = model.train(
+    data='/content/drive/MyDrive/cj_data/data/data.yaml',
+    imgsz = 1280,
+    patience=200,
+    epochs=300,
+    batch=5,
+    warmup_epochs=0,
+    lr0=0.01,
+    device=0,
+    project='/content/drive/MyDrive/cj_data/yolo/results',
+    name='exp',
+    seed=69,
+    optimizer='AdamW',#Adam, Adamax, AdamW
+    val=True,
+    cache=True,
+    pretrained=True,
+    save_period=10,
+    resume=False,
+    degrees=45,
+    translate=0.5,
+    scale=0.3,
+    mixup=0.2,
+    mosaic=1.0,
+    copy_paste=0.1,
+    #iou=0.2,
+    #conf=0.15
+    #weight_decay=0.00005
+)
+
+
+
+model = ('yolov8l')
+model = ultralytics.YOLO('/content/drive/MyDrive/cj_data/yolo/results/exp24/weights/best.pt')
+model.predict(source=image_path, imgsz=1280,save=True,  save_txt=True, save_conf=True, device=0, project='/content/drive/MyDrive/cj_data/yolo', name='pred', exist_ok=True, conf=0.25, iou=0.1,agnostic_nms=True, augment=True)
